@@ -104,15 +104,35 @@ public class Phonebook_Test {
         Person person1 = new Person("Javad","09124179069");
 
         Phonebook phonebook = new Phonebook();
-        Phonebook phonebook1 = new Phonebook();
 
         phonebook.addContact(person);
+        phonebook.addContact(person1);
 
         phonebook.setAllContactsHidden();
 
         for (Person person2 : phonebook.getContacts()){
 
             Assertions.assertEquals(true,person2.isHidden());
+        }
+
+    }
+
+    @Test
+    public void testSetAllContactsUnHidden(){
+
+        Person person = new Person("Ali","09124238971");
+        Person person1 = new Person("Javad","09124179069");
+
+        Phonebook phonebook = new Phonebook();
+
+        phonebook.addContact(person);
+        phonebook.addContact(person1);
+
+        phonebook.setAllContactsUnHidden();
+
+        for (Person person2 : phonebook.getContacts()){
+
+            Assertions.assertEquals(false,person2.isHidden());
         }
 
     }
