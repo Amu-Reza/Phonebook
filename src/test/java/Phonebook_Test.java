@@ -38,4 +38,18 @@ public class Phonebook_Test {
         Assertions.assertEquals(1,phonebook.getContact("Ali"));
         Assertions.assertEquals(0,phonebook.getContact("Sara"));
     }
+
+    @Test
+    public void testUpdateContactName(){
+
+        Person person = new Person("Ali","09124238971");
+        Person person1 = new Person("Javad","09124179069");
+
+        Phonebook phonebook = new Phonebook();
+
+        phonebook.addContact(person);
+        phonebook.addContact(person1);
+        Assertions.assertEquals(1,phonebook.updateContactName("Ali","Majid"));
+        Assertions.assertEquals(0,phonebook.updateContactName("Sara","Ali"));
+    }
 }
