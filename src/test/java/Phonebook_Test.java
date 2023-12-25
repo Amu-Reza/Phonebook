@@ -66,4 +66,18 @@ public class Phonebook_Test {
         Assertions.assertEquals(1,phonebook.updateContactPhoneNumber("Ali","09211938196"));
         Assertions.assertEquals(0,phonebook.updateContactPhoneNumber("Sara","09124567896"));
     }
+
+    @Test
+    public void testDeleteContact(){
+
+        Person person = new Person("Ali","09124238971");
+        Person person1 = new Person("Javad","09124179069");
+
+        Phonebook phonebook = new Phonebook();
+
+        phonebook.addContact(person);
+        phonebook.addContact(person1);
+        Assertions.assertEquals(1,phonebook.deleteContact("Ali"));
+        Assertions.assertEquals(0,phonebook.deleteContact("Sara"));
+    }
 }
