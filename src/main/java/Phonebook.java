@@ -130,4 +130,8 @@ public class Phonebook {
             contact.setUnHidden();
         }
     }
+
+    public ArrayList<Person> getContacts() {
+        return contacts;
+    }
 }

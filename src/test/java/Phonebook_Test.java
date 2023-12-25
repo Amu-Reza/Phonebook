@@ -92,7 +92,8 @@ public class Phonebook_Test {
 
         phonebook.addContact(person);
         phonebook.addContact(person1);
-        Assertions.assertEquals(phonebook.getAllContacts(),phonebook.getAllContacts());
+        Assertions.assertEquals(phonebook.getContacts(),phonebook.getAllContacts());
+        Assertions.assertEquals(phonebook1.getContacts(),phonebook1.getAllContacts());
 
     }
 }
